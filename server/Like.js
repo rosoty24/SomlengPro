@@ -1,0 +1,14 @@
+Meteor.methods({
+	likesinger:function(obj){
+		like.insert(obj);
+	},
+	unlikesinger:function(obj){
+		like.insert(obj);
+	},
+	removeLike:function(singerId,userId){
+		like.remove({singerId:singerId,userId:userId,status:'like'});
+	},
+	removeUnlike:function(singerId,userId){
+		like.remove({singerId:singerId,userId:userId,status:'unlike'});
+	}
+});
