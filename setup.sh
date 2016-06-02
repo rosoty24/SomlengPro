@@ -7,6 +7,8 @@ sudo apt-get update
 wait
 sudo apt-get install nodejs
 wait
+sudo apt-get install nodejs-legacy
+wait
 sudo apt-get install npm
 wait
 curl https://install.meteor.com | /bin/sh
