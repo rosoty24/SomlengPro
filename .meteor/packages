@@ -22,7 +22,7 @@ iron:router
 matteodem:easy-search
 u2622:persistent-session
 wollardj:timeago
-twbs:bootstrap
 alanning:roles
 msavin:mongol
 accounts-password
+mrt:bootstrap-3

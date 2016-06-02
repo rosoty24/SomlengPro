@@ -1,0 +1,81 @@
+<template name="leftsinger">
+	<div class="sidebar col-md-2 col-sm-1 ">			
+		<div class="sidebar-collapse">
+			
+			<div class="controls" style="padding:15px 0px;">
+			  <form class="search" role="search">
+				  <div class="input-group col-lg-12">
+					<!--<input class="form-control" placeholder="Search singer..." type="text">-->
+					<!-- {{> esInput index="singer" type="text" class="form-control" placeholder="Search singer..."}} -->
+					{{> EasySearch.Input index=singerIndex}}
+				  </div>	
+			  </form>
+			</div>
+			
+			<ul class="list-group no-bg no-borders pull-in">
+				{{#EasySearch.Each index=singerIndex }}
+					<li class="list-group-item clearfix">
+						<a href="/playlist/{{_id}}" id="reload">
+						  	<div class="pull-left w-40 m-r">
+								<img src="/img/singer/{{image}}" alt="..." class="w-full img-circle">
+						  	</div>
+						  	<div class="clear text-ellipsis">			
+								<div>{{singernamekh}}</div>
+								<small class="text-muted-dk">{{singername}} <span style="color:#ccc; padding-left:2px;padding-right:15px; float:right"><!-- {{Songnum _id}}  --><i class="fa fa-music"></i></span></small>
+						  	</div>
+						 </a>
+					</li>
+				{{/EasySearch.Each}}
+				{{#EasySearch.IfNoResults index=singerIndex }}
+					<div class="text-center col-sm-12">
+						<h1><i class="fa fa-frown-o fa-2x"></i></h1>
+						<h3><strong>No result!</strong></h3>
+						<p>Sorry! We coundn't find any result for <strong>Singer</strong></p>
+					</div>
+				{{/EasySearch.IfNoResults }}
+				<!-- {{#if Issinger}}
+					{{#esEach index="singer"}}
+						<li class="list-group-item clearfix">
+						<a href="/playlist/{{_id}}" id="reload">
+						  <div class="pull-left w-40 m-r">
+							<img src="/img/singer/{{image}}" alt="..." class="w-full img-circle">
+						  </div>
+						  <div class="clear text-ellipsis">			
+								<div>{{singernamekh}}</div>
+								<small class="text-muted-dk">{{singername}} <span style="color:#ccc; padding-left:2px;padding-right:15px; float:right">{{Songnum _id}} <i class="fa fa-music"></i></span></small>							
+						  </div>
+						  </a>
+						</li>
+					{{/esEach}}
+					 {{> esLoadMoreButton index="singer"}}
+						{{#ifEsHasNoResults index="singer"}}
+							<div class="text-center col-sm-12">
+								<h1><i class="fa fa-frown-o fa-2x"></i></h1>
+								<h3><strong>No result!</strong></h3>
+								<p>Sorry! We coundn't find any result for <strong>Singer</strong></p>
+							</div>
+						{{/ifEsHasNoResults}}
+
+					{{#ifEsIsSearching index="singer"}}
+							<div><img src="/img/icons/loading-600x400.gif" class="center-block img-responsive"></div>
+					{{/ifEsIsSearching}} 	
+				{{else}}
+					{{#each allsinger}}
+						<li class="list-group-item clearfix">
+						<a href="/playlist/{{_id}}" id="reload">
+						  <div class="pull-left w-40 m-r">
+							<img src="/img/singer/{{image}}" alt="..." class="w-full img-rounded">
+						  </div>
+						  <div class="clear text-ellipsis">			
+								<div>{{singernamekh}}</div>
+								<small class="text-muted-dk">{{singername}} <span style="color:#ccc; padding-left:2px;padding-right:15px; float:right">{{Songnum _id}} <i class="fa fa-music"></i></span></small>							
+						  </div>
+						  </a>
+						</li>
+					{{/each}}  
+				{{/if}} -->
+			</ul>	
+		</div>
+		<a href="page-activity.html#" id="main-menu-min" class="full visible-md visible-lg"><i class="fa fa-angle-double-left"></i></a>
+	</div>
+</template>
