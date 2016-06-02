@@ -1,4 +1,7 @@
 <template name="mainLayout">
+	{{#if Ishome}}
+		{{> index}}
+	{{else}}
 		{{> topmenu}} 
 		<div class="container-fluid content">
 			<div class="row">
@@ -14,4 +17,5 @@
 				</div>
 			</div>
 		</div>
+	{{/if}}
 </template>
