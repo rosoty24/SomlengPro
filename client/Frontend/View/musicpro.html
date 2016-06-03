@@ -1,0 +1,28 @@
+<template name="musicpro">
+	<div class="btn-group">	
+		{{#with getalbum}}											
+			<button type="button" class="btn btn-link"><i class="fa fa-picture-o"></i> <span>{{mypro}}</span></button>
+			<button type="button" class="btn btn-link"><i class="fa fa-music"></i> <span>{{myalbum}}</span></button>	
+		{{/with}}
+	</div>
+	
+	<div class="pull-right">
+		<div class="btn-group">
+			{{#if Isfavorite}}
+				<button type="button" class="btn btn-link unfav" data-fav="">
+					<i class="fa fa-heart"></i>
+				</button>
+			{{else}}
+				<button type="button" class="btn btn-link fav" data-fav="">
+					<i class="fa fa-heart-o"></i>
+				</button>
+			{{/if}}
+			<button type="button" id="mcomment" class="btn btn-link" data-toggle="modal" data-target="#comment_music">
+			<i class="fa fa-comment"></i> {{numcomment}}</button>
+			<button type="button" class="btn btn-link">
+			<i class="fa fa-share-alt"></i></button>
+			<button type="button" class="btn btn-link">
+			<i class="fa fa-download"></i></button>
+		</div>
+	</div>
+</template>

@@ -86,9 +86,8 @@ Meteor.methods({
 		singerid:singerid
   	};
   	musics.insert(attributes);
-  	console.log("Inserted");
 	},
-	UpdateMusic: function(id,attributes){
-		musics.update({_id:id},{$set: attributes});
+	UpdateMusic: function(id,obj){
+		musics.update({_id:id},{$set: obj});
 	}
 });
