@@ -1,0 +1,51 @@
+<template name="review">
+	<div id="comment_music" class="modal fade" role="dialog">
+	  	<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  	<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Modal Header</h4>
+					<p id="errormsg" style="color:red"></p>
+			  	</div>
+			  	<div class="modal-body">
+					<div class="list-comments">
+						<ul class="media-list">
+							{{#each getcomment}}
+								
+								<p></p>
+							
+							<li class="media">
+								<div class="media-body">
+									<div class="media">
+										<a class="pull-left" href="#">
+											<img class="media-object img-rounded " src="/img/icons/user.gif" />
+										</a>
+										<div class="media-body" >
+											{{text}}
+											<br />
+										   <small class="text-muted">{{commentUser userId}} | {{>timeago timestart}}</small>
+											
+										</div>
+									</div>
+								</div>
+							</li>
+							{{/each}}
+						</ul>
+					</div>
+			  	</div>
+			  
+			  	<div class="modal-footer">
+					<div class="input-group  disabled">
+						<input class="form-control" placeholder="Enter Message" type="text" id="comment">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" id="send">SEND</button>
+						</span>
+					</div>
+					
+			  	</div>
+			</div>
+	  	</div>
+	</div>
+</template>

@@ -13,15 +13,13 @@
             <div class="col-md-6 col-md-offset-3 padding-xs">
 			<form class="search form-inline" role="search">
               <div class="input-group input-group-lg">
-                <!--<input type="text" class="form-control" placeholder="Search singer...">-->
-				<!-- {{> esInput index="singer" type="text" class="form-control" placeholder="Search singer..."}} -->
-				 {{> EasySearch.Input index=singerIndex attributes=inputAttributes}}
+				 {{> EasySearch.Input index=singerIndex attributes=inputAttributes timeout=500}}
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button">Go!</button>
                 </span>
               </div>
 			</form>
-				<h4><!-- {{countSinger}} --></h4>
+				<h4>{{countSinger}}</h4>
 				<br>
 				<ul class="list-inline">
 					<li class="active">
@@ -43,26 +41,21 @@
 				<br>
               
             </div>
-            <!-- /input-group -->
-           
-            
           </div>
         </div>
         <div class="section">
           <div class="container">
             <div class="row">
-			<!-- {{#if singer}}
-				{{#esEach index="singer"}} -->
 				{{#EasySearch.Each index=singerIndex }}
 				  	<div class="col-xs-6 col-sm-6 col-md-2 padding-xs">              
 						<div class="thumbnail">
-							<a href="/playlist/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
+							<a href="/playlist/{{singername}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
 							<div class="text-center">	
 								<h5 class="text-muted">{{singernamekh}}</h5>
 								<h5><a href="/playlist/{{_id}}">{{singername}}</a></h5>						
 								<p class="caption">
-									<a href="#" class="pull-left"><i class="fa fa-music"></i> <!-- {{Countmp3 _id}} --></a> 
-									<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> <!-- {{Countfavorite _id}} --></a>
+									<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
+									<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countfavorite _id}}</a>
 								</p>						
 							</div>
 						</div>      
@@ -71,36 +64,6 @@
 				{{#EasySearch.IfNoResults index=singerIndex }}
 					<h3 style="padding-top: 5px;">No results found</h3>
 				{{/EasySearch.IfNoResults }}
-				 <!-- {{/esEach}}
-				 {{> esLoadMoreButton index="singer"}}
-					{{#ifEsHasNoResults index="singer"}}
-						<div class="text-center">
-							<h1><i class="fa fa-frown-o fa-2x"></i></h1>
-							<h3><strong>No result!</strong></h3>
-							<p>Sorry! We coundn't find any result for <strong>Singer</strong></p>
-						</div>
-					{{/ifEsHasNoResults}}
-
-				{{#ifEsIsSearching index="singer"}}
-						<div><img src="/img/icons/loading-600x400.gif" class="center-block img-responsive"></div>
-				{{/ifEsIsSearching}}   
-			{{else}}
-				{{#each getSinger}}
-					<div class="col-sm-6 col-md-2">              
-						<div class="thumbnail">
-							<a href="/playlist/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
-							<div class="text-center">	
-								<h5 class="text-muted">{{singernamekh}}</h5>
-								<h5>{{singername}}</h5>						
-								<p class="caption">
-									<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
-									<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countfavorite _id}}</a>
-								</p>						
-							</div>
-						</div>      
-					</div>
-				{{/each}}
-			{{/if}} -->
             </div>
 			<!-- /row -->
           </div>

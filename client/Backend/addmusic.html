@@ -1,0 +1,237 @@
+<template name="addmusic">
+        <div id="page-wrapper">
+            <div class="container-fluid">
+				<div class="well">
+					<div class="row">
+						<div class="col-lg-3 col-md-6">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-xs-3">
+											<i class="fa fa-male fa-5x"></i>
+										</div>
+										<div class="col-xs-9 text-right">
+											<div class="huge">26</div>
+											<div>Males !</div>
+										</div>
+									</div>
+								</div>
+								<a href="#">
+									<div class="panel-footer">
+										<span class="pull-left">View Details</span>
+										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+										<div class="clearfix"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="panel panel-green">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-xs-3">
+											<i class="fa fa-female fa-5x"></i>
+										</div>
+										<div class="col-xs-9 text-right">
+											<div class="huge">12</div>
+											<div>Females !</div>
+										</div>
+									</div>
+								</div>
+								<a href="#">
+									<div class="panel-footer">
+										<span class="pull-left">View Details</span>
+										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+										<div class="clearfix"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="panel panel-yellow">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-xs-3">
+											<i class="fa fa-music fa-5x"></i>
+										</div>
+										<div class="col-xs-9 text-right">
+											<div class="huge">124</div>
+											<div>Musics !</div>
+										</div>
+									</div>
+								</div>
+								<a href="#">
+									<div class="panel-footer">
+										<span class="pull-left">View Details</span>
+										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+										<div class="clearfix"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="panel panel-red">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-xs-3">
+											<i class="fa fa-picture-o fa-5x"></i>
+										</div>
+										<div class="col-xs-9 text-right">
+											<div class="huge">13</div>
+											<div>Productions !</div>
+										</div>
+									</div>
+								</div>
+								<a href="#">
+									<div class="panel-footer">
+										<span class="pull-left">View Details</span>
+										<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+										<div class="clearfix"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- /.row -->
+                <!-- Page Heading -->
+                <div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-12">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title">Application Form</h3>
+							</div>
+							<div class="panel-body">
+								<form role="form">
+									<div class="form-group">
+									  	<label for="title">Title Music :</label>
+									  	<input type="text" class="form-control" id="title" placeholder="Enter music title">
+									</div>
+									<div class="form-group">
+									  	<label for="srcmusic">Url Music :</label>
+									  	<input type="text" class="form-control" id="srcmusic" placeholder="url music.mp3">
+									</div>
+									<div class="form-group">
+									  	<label for="production">Prouction :</label>
+									  	<select class="form-control" id="production">
+											{{#each getProduction}}	
+												<option value="{{_id}}">{{title}}</option>
+											{{/each}}
+									  	</select>
+									</div>
+									<div class="form-group">
+									  	<label for="albums">Albums :</label>
+									  	<select class="form-control" id="albums">
+											{{#each getAlbumsname}}
+												<option value="{{_id}}">{{title}}</option>				
+											{{/each}}
+										</select>
+									</div>
+									<div class="form-group">
+									  	<label for="albums">Singer :</label>
+									  	<select class="form-control" id="singerId">
+											{{#each getSinger}}
+												<option value="{{_id}}">{{singername}}</option>				
+											{{/each}}
+										</select>
+									</div>
+									<button class="btn btn-success pull-right" id="btnAddmusic">Add</button>
+								</form>
+								<br>
+								<br>
+								<br>
+								<form class="search" role="search">
+					              	<div class="input-group input-group-lg">
+									 	{{> EasySearch.Input index=musicIndex}}
+					             	 </div>
+								</form>
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover table-striped">
+										<thead>
+											<tr>
+												<th class="text-center" style="width:5%">Logo</th>
+												<th class="text-center" style="width:25%">Mp3 Title</th>
+												<th class="text-center" style="width:10%">Singer</th>
+												<th class="text-center" style="width:10%" colspan="3">Tools</th>
+											</tr>
+										</thead>
+										<tbody>
+											{{#EasySearch.Each index=musicIndex }}
+												<tr>	
+													<!--<td>{{_id}}</td>-->
+													<td><img src="/img/production/{{image}}" width="25" height="25" class="img-responsive center-block"></td>
+													<td>{{title}}</td>												
+													<td class="text-center"><a href="">{{Getsingername singerid}} <i class="fa fa-picture-o"></i> </a></td>
+													<td class="text-center"><a class="glyphicon glyphicon-trash center-block" href="" id="remove"></a></td>
+													<td class="text-center"><a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-edit center-block" id="updateproduction" href=""></a></td>
+												</tr>
+											{{/EasySearch.Each}}
+											{{#EasySearch.IfNoResults index=musicIndex }}
+												<h3 style="padding-top: 5px;">No results found</h3>
+											{{/EasySearch.IfNoResults }}
+										</tbody>
+									</table>
+								</div>
+								<!-- Modal -->
+								  <div class="modal fade" id="myModal" role="dialog">
+									<div class="modal-dialog ">
+									  <div class="modal-content">
+										{{#with getCurrentUpdate}}
+											<div class="modal-header">
+											  	<button type="button" class="close" data-dismiss="modal">&times;</button>
+											  	<h4 class="modal-title">Edit Production </h4>
+											</div>
+											<div class="modal-body">
+											  	<form role="form">
+													<div class="form-group">
+													  	<label for="title">Title Music :</label>
+													  	<input type="text" class="form-control" id="title-edit" placeholder="Enter music title" value="{{title}}">
+													</div>
+													<div class="form-group">
+													  	<label for="srcmusic">Url Music :</label>
+													  	<input type="text" class="form-control" id="srcmusic-edit" placeholder="url music.mp3" value="{{Getsrc srcmusic}}">
+													</div>
+													<div class="form-group">
+													  	<label for="production">Prouction :</label>
+													  	<select class="form-control" id="production-edit">
+													  		<option value="{{production}}" style="display:none">{{CurrentProduct production}}</option>
+															{{#each getProduction}}	
+																<option value="{{_id}}">{{title}}</option>
+															{{/each}}
+													  	</select>
+													</div>
+													<div class="form-group">
+													  	<label for="albums">Albums :</label>
+													  	<select class="form-control" id="albums-edit">
+													  		<option value="{{albums}}" style="display:none">{{CurrentProduct albums}}</option>
+															{{#each getAlbumsname}}
+																<option value="{{_id}}">{{title}}</option>		
+															{{/each}}
+														</select>
+													</div>
+													<div class="form-group">
+													  	<label for="albums">Singer :</label>
+													  	<select class="form-control" id="singerId-edit">
+													  		<option value="{{singerid}}" style="display:none">{{CurrentSinger singerid}}</option>
+															{{#each getSinger}}
+																<option value="{{_id}}">{{singername}}</option>				
+															{{/each}}
+														</select>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+											  <button type="button" class="btn btn-success" data-dismiss="modal" id="btnUpdatemusic">Update</button>
+											</div>
+										{{/with}}
+									  </div>
+									</div>
+								  </div>
+							</div>
+							
+						</div>	 
+					</div>
+                </div>
+            </div>
+        </div>
+</template>

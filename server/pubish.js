@@ -13,6 +13,9 @@ Meteor.publish("production", function () {
 Meteor.publish("musicsList", function (id,limit) {
     return musics.find({'singerid':id},{limit:limit});
 });
+Meteor.publish("AddmusicsList", function () {
+    return musics.find();
+});
 Meteor.publish("like", function () {
     return like.find();
 });

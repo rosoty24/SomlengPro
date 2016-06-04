@@ -1,5 +1,5 @@
-<template name="playlist">
-		<div style="background:#fff;margin: 0px 40px 20px 80px;padding: 0px;">
+<template name="listsearch">
+		<div style="background:#fff;margin: 0 40px 20px 80px;padding: 10px;">
 			{{> favoriteInfo}}
 		</div>
 		<ul>
@@ -17,31 +17,35 @@
 						<div class="progress-bar hp_range" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="p"><span></span>
 						</div>
 					</div>
+					
 					{{> musicpro}}
-					<hr>
 					<img src="/img/ads.png" class="img-responsive">
-				<!--</div>-->
-
 				<!-- Modal -->
 					{{> review}}
 				<!-- popup comment music -->
 				<audio src="" id="audio" preload="auto" tabindex="0" autoplay type="audio/mpeg"></audio>
 				<ul id="playlist">
-					{{#each Myplaylist}}
+					{{#each Searchlist}}
 						<li class="listmp">
-							<a href="#" class="play" id="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}" 
-							data-id="{{_id}}">
+							<a href="#" class="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}" data-id="{{_id}}">
 								<div class="name">
 								<span id="iconplay"><img class="playing pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
-								<div class="date"></div>
+								<div class="date">{{Timeplay}}</div>
+								<div class="delete"><i class="fa fa-music"></i></div>
+							</a>
+						</li>
+					{{/each}}
+					{{#each Moresong}}
+						<li class="listmp">
+							<a href="#" class="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}" data-id="{{_id}}">
+								<div class="name">
+								<span id="iconplay"><img class="playing pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
+								<div class="date">{{Timeplay}}</div>
 								<div class="delete"><i class="fa fa-music"></i></div>
 							</a>
 						</li>
 					{{/each}}
 				</ul>	
 			</li>
-		</ul>
-	<script type="text/javascript">
-
-	</script>	
+		</ul>		
 </template>

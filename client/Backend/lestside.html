@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="/admin/dashboard">Somleng Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -117,17 +117,17 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/admin/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
     
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="{{pathFor route='alluser'}}">Users All</a>
+                                <a href="/admin/alluser">Users All</a>
                             </li>
                             <li>
-                                <a href="{{pathFor route='user'}}">Users Add</a>
+                                <a href="/admin/user">Users Add</a>
                             </li>
                         </ul>
                     </li>
@@ -135,16 +135,18 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#singer"><i class="fa fa-user"></i> Singer <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="singer" class="collapse">
                             <li>
-                                <a href="{{pathFor route='allsinger'}}">All Singer</a>
+                                <a href="/admin/allsinger">All Singer</a>
                             </li>
                             <li>
-                                <a href="{{pathFor route='addsinger'}}">Add Singer</a>
+                                <a href="/admin/addsinger">Add Singer</a>
                             </li>
                         </ul>
                     </li>
 					<li>
                         <a href="/admin/allproduction"><i class="fa fa-picture-o"></i> Production</a>
-                        
+                    </li>
+                    <li>
+                        <a href="/admin/addmusic"><i class="fa fa-picture-o"></i> Add Muscis</a>
                     </li>
                 </ul>
             </div>
