@@ -4,15 +4,18 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1 class="text-danger" style="margin-bottom:10px">
+            <h1 class="text-danger hidden-xs" style="margin-bottom:10px">
 				<a href="/"><img src="/img/logo_somleng.svg" width="220" height="220"></a>
             </h1>
-            <div class="col-md-6 col-md-offset-3">
-			<form class="search" role="search">
+			<h1 class="text-danger" style="margin-bottom:10px">
+				<a href="/" class="visible-xs"><img src="/img/logo_somleng.svg" width="100" height="100"></a>
+            </h1>
+            <div class="col-md-6 col-md-offset-3 padding-xs">
+			<form class="search form-inline" role="search">
               <div class="input-group input-group-lg">
                 <!--<input type="text" class="form-control" placeholder="Search singer...">-->
 				<!-- {{> esInput index="singer" type="text" class="form-control" placeholder="Search singer..."}} -->
-				 {{> EasySearch.Input index=singerIndex}}
+				 {{> EasySearch.Input index=singerIndex attributes=inputAttributes}}
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button">Go!</button>
                 </span>
@@ -51,12 +54,12 @@
 			<!-- {{#if singer}}
 				{{#esEach index="singer"}} -->
 				{{#EasySearch.Each index=singerIndex }}
-				  	<div class="col-sm-6 col-md-2">              
+				  	<div class="col-xs-6 col-sm-6 col-md-2 padding-xs">              
 						<div class="thumbnail">
 							<a href="/playlist/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
 							<div class="text-center">	
 								<h5 class="text-muted">{{singernamekh}}</h5>
-								<h5>{{singername}}</h5>						
+								<h5><a href="/playlist/{{_id}}">{{singername}}</a></h5>						
 								<p class="caption">
 									<a href="#" class="pull-left"><i class="fa fa-music"></i> <!-- {{Countmp3 _id}} --></a> 
 									<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> <!-- {{Countfavorite _id}} --></a>
