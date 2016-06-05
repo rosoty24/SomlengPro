@@ -1,7 +1,7 @@
 Session.set('SINGER-GENDER','');
 Template.index.helpers({
   	singerIndex: () => SingerIndex,
-  	inputAttributes: function () { return { class: 'form-control', placeholder: 'Search Singer Here...' }; },
+  	inputAttributes: function () { return { class: 'form-control', placeholder: 'Search singer here...' }; },
   	getSinger: function(){
 		var type = Session.get('SINGER-GENDER');
 		var result = '';
