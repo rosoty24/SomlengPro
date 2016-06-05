@@ -7,10 +7,10 @@ Template.addsinger.events({
 		var image =$('#image').val();
 		var gender =$('#gender').val();
 		var status = 0;
-		alert(singername + singernamekh + image + gender); 
+		//alert(singername + singernamekh + image + gender); 
 		Meteor.call('addSinger', singername, singernamekh, image, status, gender);
-		Router.go('/allsinger');
-		console.log("Inserted");
+		Router.go('/admin/allsinger');
+		//console.log("Inserted");
 	}
 });
 Template.updatesinger.events({
@@ -22,7 +22,7 @@ Template.updatesinger.events({
 		var image =$('#image').val();
 		var gender =$('#gender').val();
 		var status = 0;
-		alert(singername + singernamekh + image + gender); 
+		//alert(singername + singernamekh + image + gender); 
 		var attributes = {
 			singername:singername,
 			singernamekh:singernamekh,
@@ -31,8 +31,8 @@ Template.updatesinger.events({
 			gender:gender
 		}
 		Meteor.call('updateSinger',id, attributes );
-		Router.go('/allsinger');
-		console.log("Inserted");
+		Router.go('/admin/allsinger');
+		//console.log("Inserted");
 	}
 });
 Template.updatesinger.helpers({
@@ -99,7 +99,7 @@ Template.allsinger.events({
 		var partmusic = "/mp3"+"/"+pro_folder+"/"+albums_folder+"/"+srcmusic;
 		alert(partmusic); 
 		Meteor.call('addMusic', title, partmusic, production, albums, singerid);
-		Router.go('/allsinger');
-		console.log("Inserted");
+		Router.go('/admin/allsinger');
+		//console.log("Inserted");
 	}
 });

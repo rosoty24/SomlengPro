@@ -7,16 +7,17 @@
 				<div class="author">
 					<img src="" alt="avatar" class="mp3image">
 				</div>
-				<div class="name" id="mp3title"></div>
+				<audio src="" id="audio" preload="auto" tabindex="0" autoplay type="audio/mpeg"></audio>
+				<!-- <div class="name" id="mp3title"></div>
 				<div class="date">
 				  <span id="curtimetext">00:00</span> / 
 				  <span id="durtimetext">00:00</span>
-				</div>
+				</div> -->
 				<div class="delete"><i class="fa fa-pause" id="currentplay"></i></div>
-					<div class="progress thin">
+					<!-- <div class="progress thin">
 						<div class="progress-bar hp_range" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="p"><span></span>
 						</div>
-					</div>
+					</div> -->
 					{{> musicpro}}
 					<hr>
 					<img src="/img/ads.png" class="img-responsive">
@@ -25,8 +26,8 @@
 				<!-- Modal -->
 					{{> review}}
 				<!-- popup comment music -->
-				<!-- <audio src="" id="audio" preload="auto" tabindex="0" autoplay type="audio/mpeg"></audio> -->
-				<audio preload></audio>
+				
+				<!-- <audio preload></audio> -->
 				<ul id="playlist">
 					{{#each Myplaytest}}
 						<!-- <li class="listmp">
@@ -54,7 +55,7 @@
           trackEnded: function() {
             var next = $('ol li.playing').next();
             if (!next.length) next = $('ol li').first();
-            next.addClass('playing1').siblings().removeClass('playing1');
+            next.addClass('playing').siblings().removeClass('playing');
             audio.load($('a', next).attr('data-src'));
             audio.play();
           }
@@ -63,13 +64,13 @@
         // Load in the first track
         var audio = a[0];
             first = $('ol a').attr('data-src');
-        $('ol li').first().addClass('playing1');
+        $('ol li').first().addClass('playing');
         audio.load(first);
 
         // Load in a track on click
         $('ol li').click(function(e) {
           e.preventDefault();
-          $(this).addClass('playing1').siblings().removeClass('playing1');
+          $(this).addClass('playing').siblings().removeClass('playing');
           audio.load($('a', this).attr('data-src'));
           audio.play();
         });
@@ -78,12 +79,12 @@
           var unicode = e.charCode ? e.charCode : e.keyCode;
              // right arrow
           if (unicode == 39) {
-            var next = $('li.playing1').next();
+            var next = $('li.playing').next();
             if (!next.length) next = $('ol li').first();
             next.click();
             // back arrow
           } else if (unicode == 37) {
-            var prev = $('li.playing1').prev();
+            var prev = $('li.playing').prev();
             if (!prev.length) prev = $('ol li').last();
             prev.click();
             // spacebar
