@@ -1,0 +1,96 @@
+<template name="playtest">
+		<div style="background:#fff;margin: 0px 40px 20px 80px;padding: 0px;">
+			{{> favoriteInfo}}
+		</div>
+		<ul>
+			<li>
+				<div class="author">
+					<img src="" alt="avatar" class="mp3image">
+				</div>
+				<div class="name" id="mp3title"></div>
+				<div class="date">
+				  <span id="curtimetext">00:00</span> / 
+				  <span id="durtimetext">00:00</span>
+				</div>
+				<div class="delete"><i class="fa fa-pause" id="currentplay"></i></div>
+					<div class="progress thin">
+						<div class="progress-bar hp_range" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="p"><span></span>
+						</div>
+					</div>
+					{{> musicpro}}
+					<hr>
+					<img src="/img/ads.png" class="img-responsive">
+				<!--</div>-->
+
+				<!-- Modal -->
+					{{> review}}
+				<!-- popup comment music -->
+				<!-- <audio src="" id="audio" preload="auto" tabindex="0" autoplay type="audio/mpeg"></audio> -->
+				<audio preload></audio>
+				<ul id="playlist">
+					{{#each Myplaytest}}
+						<!-- <li class="listmp">
+							<a href="#" class="play" id="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}" 
+							data-id="{{_id}}">
+								<div class="name">
+								<span id="iconplay"><img class="playing pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
+								<div class="date"></div>
+								<div class="delete"><i class="fa fa-music"></i></div>
+							</a>
+						</li> -->
+					    <ol>
+					        <li>
+					        	<a href="#" data-src="{{srcmusic}}">{{title}}</a>
+					        </li>
+					    </ol>
+					{{/each}}
+				</ul>	
+			</li>
+		</ul>
+	<script>
+      $(function() { 
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing1').siblings().removeClass('playing1');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+        
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing1');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing1').siblings().removeClass('playing1');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing1').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing1').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>	
+</template>

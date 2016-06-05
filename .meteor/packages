@@ -28,3 +28,5 @@ accounts-password
 mrt:bootstrap-3
 session
 fortawesome:fontawesome
+accounts-facebook
+service-configuration

@@ -46,26 +46,5 @@ Template.playlist.helpers({
 			return "/img/singer/"+result;
 	}
 });
-// Template.playlist.events({
-// 	"click #currentplay":function(e){
-// 		e.preventDefault();
-// 		var audioElem = document.getElementById('audio');
-// 		//alert(audioElem);
-// 		if (audioElem.paused){
-// 		    audioElem.play();
-// 			$("#currentplay").addClass("fa-pause");
-// 			$("#currentplay").removeClass("fa-play");
-// 		}
-// 		else{
-// 		    audioElem.pause();
-// 			$("#currentplay").removeClass("fa-pause");
-// 			$("#currentplay").addClass("fa-play");
-// 		}		
-// 	},
-// 	"click .play":function(e){
-// 		e.preventDefault();
-// 		//var play = $(e.currenTarget).
 
-// 	}
-// });
 
