@@ -25,8 +25,8 @@ wollardj:timeago
 alanning:roles
 msavin:mongol
 accounts-password
-mrt:bootstrap-3
 session
 fortawesome:fontawesome
 accounts-facebook
 service-configuration
+twbs:bootstrap
