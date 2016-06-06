@@ -49,32 +49,36 @@ Template.topmenu.events({
             } else {
                 var user = Meteor.users.findOne({ _id: Meteor.userId() });
                 //alert(fname);
-                //var firstname = user.services.facebook.first_name;
-                //var lastname = user.services.facebook.last_name;
-                //var sex = user.services.facebook.gender;
-                // var image = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
-                // //alert(picture);
-                // if (user.profile.firstname) {
-                //     //$('.close').click();
-                //     Router.go('/');
-                // } else {
-                //     var userObj = {
-                //         firstname: firstname,
-                //         lastname: lastname,
-                //         sex: sex
-                //     }
-                //     var obj = {
-                //         profile: userObj,
-                //         roles: { ["member"] },
-                //         image: image
-                //     }
-                //     Meteor.call('updateRoleWithSocail', Meteor.userId(), obj, function(err, data) {
-                //         if (!err) {
-                //             $('.close').click();
-                //             Router.go("/");
-                //         }
-                //     });
-                // }
+                var address = user.services.facebook.email;
+                var username = user.profile.name;
+                var firstname = user.services.facebook.first_name;
+                var lastname = user.services.facebook.last_name;
+                var sex = user.services.facebook.gender;
+                var image = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
+                //alert(picture);
+                if (user.profile.firstname) {
+                    $('.close').click();
+                    //Router.go('/');
+                } else {
+                    var userObj = {
+                        username: username,
+                        firstname: firstname,
+                        lastname: lastname,
+                        sex: sex,
+                        image: image
+                    }
+                    var obj = {
+                        emails: [{address:address,verified:false}],
+                        profile: userObj,
+                        roles: ["member"]
+                    }
+                    Meteor.call('updateRoleWithSocail', Meteor.userId(), obj, function(err, data) {
+                        if (!err) {
+                            $('.close').click();
+                            //Router.go("/");
+                        }
+                    });
+                }
             }
         });
     },

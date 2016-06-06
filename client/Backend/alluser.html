@@ -20,28 +20,34 @@
                             <table class="table table-bordered table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="width:25%">First Name</th>
-                                        <th class="text-center" style="width:25%">Last Name</th>
+                                        <th class="text-center" style="width:25%">Username</th>
                                         <th class="text-center" style="width:25%">Email</th>
-										<th class="text-center" style="width:15%">Position</th>
 										<th class="text-center" style="width:10%" colspan="3">Tools</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 									{{#each getUser}}
-                                    <tr>
-                                        <td>{{profile.firstname}}</td>
-                                        <td>{{profile.lastname}}</td>
-										{{#each emails}}
-                                        <td>{{address}}</td>
-										{{/each}}
-										
-										<td>{{position roles}}</td>
-										
-										<td><a class="glyphicon glyphicon-eye-open center-block" href="" id="remove"></a></td>
-										<td><a class="glyphicon glyphicon-trash center-block" href="" id="remove"></a></td>
-										<td><a class="glyphicon glyphicon-edit center-block" href="updateuser/{{_id}}"></a></td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{profile.username}}</td>
+    										{{#each emails}}
+                                                <td>{{address}}</td>
+    										{{/each}}
+    										<td>
+                                                <a class="glyphicon glyphicon-eye-open center-block" href="#"></a>
+                                            </td>
+                                            {{#if checkuser roles}}
+        										<td>
+                                                    <a class="glyphicon glyphicon-trash center-block" href="#" id="remove"></a>
+                                                </td>
+                                            {{else}}
+                                                <td>
+                                                    <a class="glyphicon glyphicon-ban-circle" href="#"></a>
+                                                </td>
+                                            {{/if}}
+    										<td>
+                                                <a class="glyphicon glyphicon-edit center-block" href="#"></a>
+                                            </td>
+                                        </tr>
 									{{/each}}
                                 </tbody>
                             </table>

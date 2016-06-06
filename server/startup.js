@@ -9,7 +9,7 @@ Meteor.startup(function() {
             id = Accounts.createUser({
                 email: user.email,
                 password: "somleng@admin",
-                profile: { username: user.name }
+                profile: { username: user.name,firstname:"",lastname:"",sex:"",image:"" }
             });
             Roles.addUsersToRoles(id, user.roles);
         });
