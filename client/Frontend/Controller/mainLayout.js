@@ -113,13 +113,13 @@ Template.mainLayout.events({
 		//alert(audioElem);
 		if (audioElem.paused){
 		    audioElem.play();
-			$("#currentplay").addClass("fa-pause");
-			$("#currentplay").removeClass("fa-play");
+			$("#currentplay i").addClass("fa-pause");
+			$("#currentplay i").removeClass("fa-play");
 		}
 		else{
 		    audioElem.pause();
-			$("#currentplay").removeClass("fa-pause");
-			$("#currentplay").addClass("fa-play");
+			$("#currentplay i").removeClass("fa-pause");
+			$("#currentplay i").addClass("fa-play");
 		}		
 	}
 });

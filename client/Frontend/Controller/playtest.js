@@ -3,3 +3,8 @@ Template.playtest.helpers({
 		return musics.find();
 	}
 });
+Template.myplaylist.helpers({
+	getmyplaylist:function(){
+		return musics.find();
+	}
+});
