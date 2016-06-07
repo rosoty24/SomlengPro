@@ -27,15 +27,16 @@ Template.index.helpers({
 		return result;
 	},
 	Countmp3:function(singerId){
-		Meteor.call("Countsong",singerId,function(error,respon){
-			if(!error){
-				Session.set("COUNTMUSIC",respon);
-			}
-		});
-		//return Session.get("COUNTMUSIC");
+		// Meteor.call("Countsong",singerId,function(error,respon){
+		// 	if(!error){
+		// 		Session.set("COUNTMUSICNUM",respon);
+		// 	}
+		// });
+		// return Session.get("COUNTMUSICNUM");
+		return musics.find({'singerid':singerId}).count();
 	},
-	Countfavorite:function(id){
-		return favorite.find({'singerId':id}).count();
+	Countlike:function(id){
+		return like.find({'singerId':id}).count();
 	}
 });
 Template.index.events({
