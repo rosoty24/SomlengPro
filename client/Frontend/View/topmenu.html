@@ -14,6 +14,12 @@
 				<li><a href="#" id="main-menu-toggle"><i class="fa fa-home"></i></a></li>
 			</ul>
 	        <ul class="nav navbar-nav navbar-right">
+				<li><a href="ui-buttons.html#">ABOUT US</a></li>
+				{{#if currentUser}}
+					<li><a href="#">{{currentUser.profile.username}}</a></li>
+				{{else}}
+					<li><a href="#" data-toggle="modal" data-target="#login-modal">LOGIN</a></li>
+				{{/if}}
 				<li class="dropdown">
 	        		<a href="/favorite" id="myfav" class="dropdown-toggle" data-toggle="dropdown">
 	        			<i class="fa fa-heart"></i>
@@ -115,11 +121,11 @@
 						</li>
 					{{/if}}
 			</ul>
-			<form class="navbar-form navbar-left">		
+			<form class="navbar-form navbar-left hidden-xs">		
 					<!--<input class="form-control" placeholder="Search for Music title, Production , Albums ... " type="text" id="singerval">	
 					<i class="fa fa-search"></i>-->
 					<div class="input-group">
-				      <input type="text" class="form-control" placeholder="Search music title by singer ... " id="singerval">
+				      <input type="text" class="form-control hidden-xs" placeholder="Search music title by singer ... " id="singerval">
 				      <span class="input-group-btn">
 				        <button class="btn btn-secondary header-search" type="button"><i class="fa fa-search"></i></button>
 				      </span>
@@ -132,8 +138,6 @@
 	</div>
 
 	<!-- POPUP LOGIN REGISTER -->
-
-	<p data-toggle="modal" data-target="#login-modal" id="popup"></p>
 		<!-- login poup -->
 		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
