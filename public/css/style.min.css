@@ -290,6 +290,7 @@ blockquote.pull-right {
   padding: 0 10px;
   line-height: 59px;
   position: relative;
+  color:#fff;
 }
 .navbar .navbar-nav li a:hover {
   background: transparent;
@@ -405,6 +406,7 @@ blockquote.pull-right {
   height: 40px;
   margin: 0 -15px;
   padding: 0 15px;
+  color:#222;
 }
 .navbar .navbar-nav li .dropdown-menu li a:hover {
   background-color: #f2f4f8;
@@ -438,6 +440,7 @@ blockquote.pull-right {
 .navbar .navbar-nav li .dropdown-menu li a i {
   margin: 0 10px 0 -5px;
   border: none;
+  color:#222;
 }
 .navbar .navbar-nav li .dropdown-menu li.avatar {
   min-width: 300px;
