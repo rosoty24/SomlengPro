@@ -60,12 +60,14 @@ launch-screen@1.0.11
 livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
+manuelschoebel:ms-seo@0.4.1
 matteodem:easy-search@2.0.0
 meteor@1.1.14
 meteor-base@1.0.4
 meteor-platform@1.2.6
 meteorhacks:fast-render@2.14.0
 meteorhacks:inject-data@2.0.0
+meteorhacks:kadira@2.28.7
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
 meteortoys:toykit@3.0.4
@@ -79,6 +81,7 @@ modules-runtime@0.6.3
 momentjs:moment@2.9.0
 mongo@1.1.7
 mongo-id@1.0.4
+mongo-livedata@1.0.12
 msavin:mongol@2.0.1
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43

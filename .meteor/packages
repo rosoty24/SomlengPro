@@ -32,3 +32,5 @@ service-configuration
 twbs:bootstrap
 meteorhacks:fast-render
 accounts-google
+manuelschoebel:ms-seo
+meteorhacks:kadira
