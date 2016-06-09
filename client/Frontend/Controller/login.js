@@ -5,11 +5,8 @@ Template.topmenu.events({
         var password = $('#log-pass').val();
         //alert(email+password);
         Meteor.loginWithPassword(email, password,function(error){
-        	if(error){
+        	if(!error){
                 $(".close").click();
-        		//console.log("LOGIN PROBLEM"+error.reason)
-        	}else{
-        		//console.log("LOGIN SUCCESS!!!");
         	}
         });
     },
@@ -34,10 +31,9 @@ Template.topmenu.events({
         else{
             //alert(firstname+lastname+email+password);
             Meteor.call('RegisterUser',email, username, password, rerole, function(err){
-                if(err){
-                    console.log(err.reason);
-                }else{
-                    console.log("RegisterUser successfully");
+                if(!err){
+                    Meteor.loginWithPassword(email, password);
+                    $(".close").click();
                 }
             });
         }
