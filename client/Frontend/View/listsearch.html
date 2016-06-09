@@ -12,7 +12,7 @@
 				  <span id="curtimetext">00:00</span> / 
 				  <span id="durtimetext">00:00</span>
 				</div>
-				<div class="delete"><i class="fa fa-pause" id="currentplay"></i></div>
+				<div class="delete" id="currentplay"><i class="fa fa-pause"></i></div>
 					<div class="progress thin">
 						<div class="progress-bar hp_range" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="p"><span></span>
 						</div>
@@ -29,8 +29,8 @@
 						<li class="listmp">
 							<a href="#" class="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}" data-id="{{_id}}">
 								<div class="name">
-								<span id="iconplay"><img class="playing pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
-								<div class="date">{{Timeplay}}</div>
+								<span id="iconplay"><img class="curplaying pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
+								<div class="date"><!-- {{Timeplay}} --></div>
 								<div class="delete"><i class="fa fa-music"></i></div>
 							</a>
 						</li>
@@ -39,8 +39,8 @@
 						<li class="listmp">
 							<a href="#" class="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}" data-id="{{_id}}">
 								<div class="name">
-								<span id="iconplay"><img class="playing pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
-								<div class="date">{{Timeplay}}</div>
+								<span id="iconplay"><img class="curplaying pull-left" src="/img/icons/player_on.gif" style="height: 15px;padding-right: 15px" data-id="{{_id}}"></span>{{title}}</div>
+								<div class="date"><!-- {{Timeplay}} --></div>
 								<div class="delete"><i class="fa fa-music"></i></div>
 							</a>
 						</li>

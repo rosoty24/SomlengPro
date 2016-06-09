@@ -122,7 +122,12 @@ Template.topmenu.helpers({
 	},
 	numfavorite:function(){
 		var user = Meteor.userId();
-		return favorite.find({userId:user}).count();
+		var result = favorite.find({userId:user}).count();
+		if(result > 0){
+			return result;
+		}else{
+			return;
+		}
 	},
 	Islike:function(){
 		var singerId = Session.get("GETSINGER-ID");

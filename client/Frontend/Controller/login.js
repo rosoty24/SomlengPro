@@ -3,12 +3,13 @@ Template.topmenu.events({
         event.preventDefault();
         var email = $('#log-email').val();
         var password = $('#log-pass').val();
-        alert(email+password);
+        //alert(email+password);
         Meteor.loginWithPassword(email, password,function(error){
         	if(error){
-        		console.log("LOGIN PROBLEM"+error.reason)
+                $(".close").click();
+        		//console.log("LOGIN PROBLEM"+error.reason)
         	}else{
-        		console.log("LOGIN SUCCESS!!!");
+        		//console.log("LOGIN SUCCESS!!!");
         	}
         });
     },

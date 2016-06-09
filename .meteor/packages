@@ -24,7 +24,11 @@ u2622:persistent-session
 wollardj:timeago
 alanning:roles
 msavin:mongol
-accounts-password
-twbs:bootstrap
+accounts-password 
 session
 fortawesome:fontawesome
+accounts-facebook
+service-configuration
+twbs:bootstrap
+meteorhacks:fast-render
+accounts-google

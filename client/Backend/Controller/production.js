@@ -7,12 +7,12 @@ Template.allproduction.events({
 		var parent =$('#parent').val();
 		alert(title + image + parent); 
 		Meteor.call('addProduction', title, image, parent);
-		console.log("Inserted");
+		//console.log("Inserted");
 	},
 	"click #updateproduction": function(e, tpl){
 		e.preventDefault();	
 		var id = this._id;
-		alert(id);
+		//alert(id);
 		Session.set("updatePro", id);
 	}
 });

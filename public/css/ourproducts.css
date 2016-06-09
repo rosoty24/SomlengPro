@@ -1,0 +1,112 @@
+#our_products {
+	position:fixed;
+	z-index:9999;
+	top:0;
+	left:0;
+	width:100%;
+	height:38px;
+	background:url(../preview_images/our_products_pattern.jpg);
+}
+#our_products .checkProd {
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	font-size:14px;
+	padding:7px 0px;
+}
+.dropDownProd {
+	background: url(../preview_images/dropdown.png) top right no-repeat;
+	width: 284px;
+	display: block;
+	padding: 0px 8px 10px 8px;
+	color: #333;
+	font-size: 12px;
+}
+
+
+#selector1 {
+	position:absolute;
+	width:300px;
+	left:190px;
+	top:9px;
+}
+
+#selector1 a {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	color:#000000;
+	font-weight:normal;
+}
+
+#selector1 a:hover {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	color:#f76c00;
+	font-weight:normal;
+}
+
+#products1 {
+	display:none;
+	list-style:none;
+	position:relative;
+	width:300px;
+	/*height:330px;*/
+	overflow:auto;
+	margin-top:-10px;
+	margin-left:0px;
+	padding-left:0px;
+}
+#products1 li {
+	position:relative;
+	border-bottom:1px solid #666;
+	background:#000000;
+	padding: 10px 10px;
+}
+#products1 li:hover .typeJquery {
+	background:#f76c00;
+
+}
+#products1 li:hover .product_link {
+	color:#FFFFFF;
+
+}
+
+.typeJquery {
+	color:#000000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	text-transform:uppercase;
+	width:76px;
+	padding:2px 5px;
+	background:#828282;
+	text-align:center;
+}
+
+.product_link {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#797979;
+	position:absolute;
+	left:110px;
+	top:12px;
+	text-align:left;
+	text-transform:uppercase;
+}
+
+#preview_product1 {
+	position:absolute;
+	top:29px;
+	left:300px;
+	/*width:590px;
+	height:300px;*/
+}
+#close_btn {
+	position:absolute;
+	background:url(../preview_images/cross.png) no-repeat;
+	top:4px;
+	left:850px;
+	width:30px;
+	height:30px;
+}

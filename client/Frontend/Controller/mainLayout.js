@@ -106,5 +106,20 @@ Template.mainLayout.events({
 			text += '</div>';
 			$("#errormsg").html(text);
 		}
+	},
+	"click #currentplay":function(e){
+		e.preventDefault();
+		var audioElem = document.getElementById('audio');
+		//alert(audioElem);
+		if (audioElem.paused){
+		    audioElem.play();
+			$("#currentplay i").addClass("fa-pause");
+			$("#currentplay i").removeClass("fa-play");
+		}
+		else{
+		    audioElem.pause();
+			$("#currentplay i").removeClass("fa-pause");
+			$("#currentplay i").addClass("fa-play");
+		}		
 	}
 });
