@@ -65,7 +65,11 @@ Template.mainLayout.events({
 	},
 	"click #mcomment":function(e){
 		var musicid = $('.cplay').attr('data-id');
-		//alert(musicid);
+		var img = $('.cplay').attr('data-image');
+		var title = $('.cplay').attr('data-title');
+		//alert(img+title);
+		Session.set("MUSIC-TITLE",title);
+		Session.set("SINGER-IMAGE",img);
 		Session.set("MUSICID-COMMENT",musicid);
 	},
 	"click #send":function(e){

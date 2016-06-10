@@ -1,9 +1,9 @@
 Template.leftsinger.helpers({
-  singerIndex: () => SingerIndex,
-  inputAttributes: function () { return { class: 'form-control input-block-level', placeholder: 'Search Singer Here...' }; },
-  Issinger:function(){
+  	singerIndex: () => SingerIndex,
+  	inputAttributes: function () { return { class: 'form-control input-block-level', placeholder: 'Search Singer Here...' }; },
+  	Issinger:function(){
 		var singersidebar = Session.get("searchsingersidebar");
-		if(singersidebar) return true;
+		if(singersidebar == "test") return true;
 		else return false;
 	},
 	allsinger:function(){
@@ -49,5 +49,6 @@ Template.leftsinger.events({
 	'focusout .search':function(e){
 		e.preventDefault();
 		$('.search input').val('');
+		Session.set("searchsingersidebar", undefined);
 	}
 });

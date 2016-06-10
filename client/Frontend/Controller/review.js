@@ -8,5 +8,17 @@ Template.review.helpers({
 	commentUser:function(user){
 		var result = Meteor.users.findOne({_id:user}).profile.username;
 		return result;
+	},
+	getsingerImage:function(){
+		var img = Session.get("SINGER-IMAGE");
+		if(img){
+			return img;
+		}
+	},
+	getMusictitle:function(){
+		var title = Session.get("MUSIC-TITLE");
+		if(title){
+			return title;
+		}
 	}
 });
