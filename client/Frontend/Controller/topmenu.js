@@ -10,7 +10,7 @@ Template.topmenu.events({
 			status:status
 		}
 		if(!user){
-			$("#login-modal").click();
+			$("#popup").click();
 		}else{
 			$("#like").addClass("like");
 			$("#unlike").removeClass("like");
@@ -38,7 +38,7 @@ Template.topmenu.events({
 			status:status
 		}
 		if(!user){
-			$("#login-modal").click();
+			$("#popup").click();
 		}else{
 			$("#unlike").addClass("like");
 			$("#like").removeClass("like");
@@ -55,7 +55,7 @@ Template.topmenu.events({
 		}
 	},
 	"click #popregister":function(){
-		$( "#login-modal" ).dialog("close");
+		$( "#popup" ).dialog("close");
 	},
 	'keyup #singerval': function(e){
 		var key = $(e.currentTarget).val();
