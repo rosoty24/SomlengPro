@@ -142,14 +142,14 @@
 								<br>
 								<form class="search" role="search">
 					              	<div class="input-group input-group-lg">
-									 	{{> EasySearch.Input index=musicIndex}}
+									 	{{> EasySearch.Input index=musicIndex attributes=inputAttributes}}
 					             	 </div>
 								</form>
 								<div class="table-responsive">
 									<table class="table table-bordered table-hover table-striped">
 										<thead>
 											<tr>
-												<th class="text-center" style="width:5%">Logo</th>
+												<th class="text-center" style="width:5%">Image</th>
 												<th class="text-center" style="width:25%">Mp3 Title</th>
 												<th class="text-center" style="width:10%">Singer</th>
 												<th class="text-center" style="width:10%" colspan="3">Tools</th>
@@ -159,7 +159,7 @@
 											{{#EasySearch.Each index=musicIndex }}
 												<tr>	
 													<!--<td>{{_id}}</td>-->
-													<td><img src="/img/production/{{image}}" width="25" height="25" class="img-responsive center-block"></td>
+													<td><img src="{{Singerimage singerid}}" width="25" height="25" class="img-responsive center-block"></td>
 													<td>{{title}}</td>												
 													<td class="text-center"><a href="">{{Getsingername singerid}} <i class="fa fa-picture-o"></i> </a></td>
 													<td class="text-center"><a class="glyphicon glyphicon-trash center-block" href="" id="remove"></a></td>

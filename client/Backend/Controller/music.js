@@ -56,13 +56,24 @@ Template.addmusic.events({
 		e.preventDefault();
 		var id = this._id;
 		Session.set("CURRENTMUSIC-ID",id);
+	},
+	"click #remove":function(e){
+		e.preventDefault();
+		var id = this._id;
+		if(confirm("Are you sure want to delete this!!!")){
+			Meteor.call("REMOVEMUSIC",id,function(error){
+				if(!error){
+					//console.log("REMOVE SUCCESS");
+				}
+			});
+		}
 	}
 });
 Template.addmusic.helpers({
   	musicIndex: () => MusicIndex,
 	getAlbumsname: function(){
 		var resultAlbum = Session.get("AlbumId");
-		console.log("ALBUM="+resultAlbum);
+		//console.log("ALBUM="+resultAlbum);
 		return production.find({parent:resultAlbum});
 	},
 	Getsingername:function(id){
@@ -73,7 +84,7 @@ Template.addmusic.helpers({
 			document.index = index+1;
 			return document;
 		});
-		console.log(result);
+		//console.log(result);
 		return result;
 	},
 	getSingerid: function(){
@@ -82,9 +93,9 @@ Template.addmusic.helpers({
 		return result;
 	},
 	Getsrc:function(src){
-		console.log("SRC=="+src);
+		//console.log("SRC=="+src);
 		var result = src.split('/')[4];
-		console.log("SPLIT=="+result);
+		//console.log("SPLIT=="+result);
 		return result;
 	},
 	getProduction: function(){
@@ -103,5 +114,14 @@ Template.addmusic.helpers({
 	},
 	CurrentSinger:function(id){
 		return singer.findOne({_id:id}).singername;
-	}
+	},
+	Singerimage:function(id){
+		var result = singer.findOne({'_id':id}).image;
+		if(result){
+			return "/img/singer/"+result;
+		}else{
+			return;
+		}
+	},
+	inputAttributes: function () { return { class: 'form-control', placeholder: 'Search singer here...' }; }
 });

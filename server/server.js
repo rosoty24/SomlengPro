@@ -89,5 +89,8 @@ Meteor.methods({
 	},
 	UpdateMusic: function(id,obj){
 		musics.update({_id:id},{$set: obj});
+	},
+	REMOVEMUSIC:function(id){
+		return musics.remove({'_id':id});
 	}
 });
