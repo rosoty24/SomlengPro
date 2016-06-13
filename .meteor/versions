@@ -99,6 +99,7 @@ reactive-dict@1.1.7
 reactive-var@1.0.9
 reload@1.1.8
 retry@1.0.7
+reywood:iron-router-ga@0.7.1
 routepolicy@1.0.10
 service-configuration@1.0.9
 session@1.1.5

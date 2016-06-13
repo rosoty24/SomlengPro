@@ -1,6 +1,9 @@
 Template.leftsinger.helpers({
   	singerIndex: () => SingerIndex,
   	inputAttributes: function () { return { class: 'form-control input-block-level', placeholder: 'Search Singer Here...' }; },
+  	Isempty:function(){
+  		return true;
+  	},
   	Issinger:function(){
 		var singersidebar = Session.get("searchsingersidebar");
 		if(singersidebar == "test") return true;
