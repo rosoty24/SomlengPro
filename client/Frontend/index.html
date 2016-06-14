@@ -52,17 +52,17 @@
 							<a href="/playlist/{{singername}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
 							<div class="text-center">	
 								<h5 class="text-muted">{{singernamekh}}</h5>
-								<h5><a href="/playlist/{{_id}}">{{singername}}</a></h5>						
+								<h5><a href="/playlist/{{singername}}">{{singername}}</a></h5>						
 								<p class="caption">
 									<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
-									<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countlike _id}}</a>
+									<a href="/playlist/{{singername}}" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countlike _id}}</a>
 								</p>						
 							</div>
 						</div>      
 				  	</div>
 				{{/EasySearch.Each}}
 				{{#EasySearch.IfNoResults index=singerIndex }}
-					<img src="/img/loading.gif" class="img-responsive center-block">
+					<img src="/img/icons/loading.gif" class="img-responsive center-block">
 				{{/EasySearch.IfNoResults }}
             </div>
 			<!-- /row -->
