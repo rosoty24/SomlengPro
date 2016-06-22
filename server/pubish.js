@@ -22,9 +22,9 @@ Meteor.publish("like", function () {
 Meteor.publish("favorite", function () {
     return favorite.find();
 });
-Meteor.publish("userroles", function (){ 
-  return roles.find({})
-});
+// Meteor.publish("userroles", function (){ 
+//   return Meteor.roles.find({})
+// });
 Meteor.publish("musicsListfavorite", function(){
 	return musics.find({});
 });
