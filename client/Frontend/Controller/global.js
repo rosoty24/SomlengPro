@@ -84,3 +84,6 @@ Getproduction = function(){
 Template.registerHelper('Getproduction', function() {
     return Getproduction;
 });
+Template.registerHelper('Getmusicpart', function(src) {
+    return "http://51.254.205.178:8080"+src;;
+});
