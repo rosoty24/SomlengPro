@@ -20,9 +20,10 @@
 // 			 Meteor.subscribe("musicsList",id,lim);
 // 	 }
 // });
-// Template.playlist.rendered=function(){
-// 	Session.set("searchsingersidebar", undefined);
-// };
+Template.playlist.rendered=function(){
+	//Session.set("searchsingersidebar", undefined);
+	$("html, body").animate({ scrollTop: 0 }, "slow");
+};
 Template.playlist.helpers({
 	Myplaylist:function(){
 		var id = Session.get("GETSINGER-ID");

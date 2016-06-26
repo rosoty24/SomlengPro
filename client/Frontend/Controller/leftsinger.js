@@ -33,9 +33,10 @@ Template.leftsinger.events({
 		}
 		Meteor.call("Addview",obj,function(error){
 			if(error){
-				console.log("Addview problem"+error.reason);
+				//console.log("Addview problem"+error.reason);
 			}else{
-				console.log("Addview successfully");
+				$("html, body").animate({ scrollTop: 0 }, "slow");
+				//console.log("Addview successfully");
 			}
 		});
 	},

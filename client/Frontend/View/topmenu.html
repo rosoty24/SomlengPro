@@ -14,7 +14,7 @@
 				<li><a href="#" id="main-menu-toggle"><i class="fa fa-home"></i></a></li>
 			</ul>
 	        <ul class="nav navbar-nav navbar-right">
-				<li><a href="ui-buttons.html#">ABOUT US</a></li>
+				<li><a href="#">ABOUT US</a></li>
 				{{#if currentUser}}
 					<li><a href="#">{{currentUser.profile.username}}</a></li>
 				{{else}}
@@ -54,7 +54,7 @@
 						<li class="dropdown-menu-header text-center">
 							<strong>{{currentUser.profile.username}}</strong>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="ui-buttons.html#">
 								<i class="fa fa-user"></i> Profile
 							</a>
@@ -73,7 +73,7 @@
 							<a href="ui-buttons.html#">
 								<i class="fa fa-file"></i> Projects <span class="label label-primary">42</span>
 							</a>
-						</li>
+						</li> -->
 						<li class="divider"></li>
 						{{#if currentUser}}
 							<li>

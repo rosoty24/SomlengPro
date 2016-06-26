@@ -5,6 +5,11 @@ Template.addmusic.events({
 		//alert(getChild);
 		Session.set("AlbumId", getChild);
 	},
+	"change #singertype":function(){
+		var stype = $("#singertype").val();
+		//alert(stype);
+		Session.set("Typesinger", stype);
+	},
 	"click #btnAddmusic" : function(e, tpl){
 		e.preventDefault();	
 		var title =$('#title').val();		
@@ -80,12 +85,14 @@ Template.addmusic.helpers({
 		return singer.findOne({_id:id}).singername;
 	},
 	getSinger: function(){
-		var result = singer.find({}).map(function(document, index){
-			document.index = index+1;
-			return document;
-		});
-		//console.log(result);
-		return result;
+		var singerval = Session.get("Typesinger");
+		if(singerval){
+			if(singerval == "male"){
+				return singer.find({gender:singerval});
+			}else{
+				return singer.find({gender:singerval});
+			}
+		}
 	},
 	getSingerid: function(){
 		var singerid = Session.get("singer_id");
@@ -121,6 +128,11 @@ Template.addmusic.helpers({
 			return "/img/singer/"+result;
 		}else{
 			return;
+		}
+	},
+	GetImgsingertype:function(image){
+		if(image){
+			return "/img/singer/"+image;
 		}
 	},
 	inputAttributes: function () { return { class: 'form-control', placeholder: 'Search singer here...' }; }
