@@ -32,7 +32,6 @@ service-configuration
 twbs:bootstrap
 meteorhacks:fast-render
 accounts-google
-reywood:iron-router-ga
 mrt:fs
 
 
