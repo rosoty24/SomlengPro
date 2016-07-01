@@ -59,6 +59,7 @@ Template.topmenu.events({
 	},
 	'keyup #singerval': function(e){
 		var key = $(e.currentTarget).val();
+		console.log("MYKEY=="+key);
 		var id = Session.get("GETSINGER-ID");
 		var namesinger = singer.findOne({_id:id}).singername;
 		//alert(id);
