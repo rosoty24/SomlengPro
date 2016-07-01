@@ -32,8 +32,6 @@ service-configuration
 twbs:bootstrap
 meteorhacks:fast-render
 accounts-google
-mrt:fs
 
 
 npm-container
-meteorhacks:npm

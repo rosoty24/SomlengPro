@@ -6,10 +6,5 @@
   	},
   	"dependencies": {
     	"meteor-node-stubs": "~0.2.0"
-  	},
-  	"public": {
-        "ga": {
-            "id": "UA-79162908-1"
-        }
-    }
+  	}
 }

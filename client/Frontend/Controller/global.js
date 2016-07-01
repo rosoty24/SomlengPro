@@ -1,18 +1,18 @@
-var clock = 1500;
-var timeLeft = function() {
-    if (clock > 0) {
-        clock--;
-        Session.set("time", clock);
-    } else {
-        return Meteor.clearInterval(interval);
-    }
-};
+// var clock = 1500;
+// var timeLeft = function() {
+//     if (clock > 0) {
+//         clock--;
+//         Session.set("time", clock);
+//     } else {
+//         return Meteor.clearInterval(interval);
+//     }
+// };
 
-var interval = Meteor.setInterval(timeLeft, 2000);
+// var interval = Meteor.setInterval(timeLeft, 2000);
 
-Template.registerHelper("time", function() {
-    return Session.get("time");
-});
+// Template.registerHelper("time", function() {
+//     return Session.get("time");
+// });
 Template.registerHelper("slug", function() {
     return slugname(this.title);
 });

@@ -78,12 +78,14 @@ Meteor.methods({
 // Music
 Meteor.methods({
 	addMusic: function(title, srcmusic, production, albums, singerid) {
+	var nowdate = Date.now();
   	var attributes={
 		title:title,
   		srcmusic:srcmusic,
 		production:production,
 		albums:albums,
-		singerid:singerid
+		singerid:singerid,
+		datecreate:nowdate
   	};
   	musics.insert(attributes);
 	},
