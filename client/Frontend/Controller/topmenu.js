@@ -63,7 +63,7 @@ Template.topmenu.events({
 		var namesinger = singer.findOne({_id:id}).singername;
 		//alert(id);
 		if( key.length > 0){
-			var data = musics.find({"singerid":id,"title": { $regex: new RegExp(key, "i") } });
+			var data = musics.find({"singerid":id,"title": { $regex: new RegExp(key, "i") } },{limit:10});
 			var text = '';
 			var link = '';
 			if( data.count() > 0){

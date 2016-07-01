@@ -31,6 +31,9 @@ Meteor.publish("musicsListfavorite", function(){
 Meteor.publish("review", function(){
 	return review.find({});
 });
+Meteor.publish("CountMusic", function(){
+    return musics.find({});
+});
 
 
 

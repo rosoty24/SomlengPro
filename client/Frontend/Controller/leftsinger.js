@@ -1,5 +1,9 @@
+Template.leftsinger.rendered=function (){
+	Meteor.subscribe("CountMusic");
+};
 Template.leftsinger.helpers({
   	singerIndex: () => SingerIndex,
+  	singerListIndex: () => SingerListIndex,
   	inputAttributes: function () { return { class: 'form-control input-block-level', placeholder: 'Search Singer Here...' }; },
   	Isempty:function(){
   		return true;

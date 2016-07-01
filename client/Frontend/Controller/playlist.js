@@ -27,8 +27,25 @@ Template.playlist.rendered=function(){
 Template.playlist.helpers({
 	Myplaylist:function(){
 		var id = Session.get("GETSINGER-ID");
-		var result = musics.find({singerid:id});
-		return result;
+		var result = musics.find({singerid:id}).fetch();
+		//var tempArray = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+		var items = result.shuffle();
+		return items;
+		//console.log("items");
+		//console.log(items);
+		// //var n,r;
+  //   	var r, rand, n;
+  //   	//numbers = [1,2,3,5,8,13,21,34,55,89];
+		// n = result.slice(0); // clone the array
+		// r = [];
+		// while (n.length){
+		//     rand = Math.floor(Math.random()*n.length);
+		//     r.push(n.splice(rand,1));
+		//     //console.log(r[r.length-1]);
+		// }
+		// console.log("r==");
+		// console.log(r);
+		// return r;
 	},
 	// ,
 	// getsidebarsinger: function(){
@@ -47,5 +64,20 @@ Template.playlist.helpers({
 			return "/img/singer/"+result;
 	}
 });
+Array.prototype.shuffle = function() {
+    var input = this;
+     
+    for (var i = input.length-1; i >=0; i--) {
+     
+        var randomIndex = Math.floor(Math.random()*(i+1)); 
+        var itemAtIndex = input[randomIndex]; 
+         
+        input[randomIndex] = input[i]; 
+        input[i] = itemAtIndex;
+    }
+    return input;
+}
+    
+
 
 
