@@ -95,5 +95,8 @@ Meteor.methods({
 	},
 	REMOVEMUSIC:function(id){
 		return musics.remove({'_id':id});
+	},
+	RemoveAlbum:function(id){
+		return production.remove({'_id':id});
 	}
 });
