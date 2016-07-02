@@ -40,7 +40,7 @@ Meteor.methods({
 
 // singer 
 Meteor.methods({
-	addSinger: function(singername, singernamekh, image, status, gender) {
+	addSinger: function(singername, singernamekh, image, status, gender,level) {
 	//var userid = Meteor.user(this._id);
 	var userid = Meteor.userId();
   	var attributes={
@@ -49,6 +49,7 @@ Meteor.methods({
 		image:image,
 		gender:gender,
 		status:status,
+		level:level,
 		userid:userid
   	};
   	singer.insert(attributes);

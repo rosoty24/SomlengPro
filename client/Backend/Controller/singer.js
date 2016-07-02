@@ -6,9 +6,10 @@ Template.addsinger.events({
 		var singernamekh =$('#singernamekh').val();
 		var image =$('#image').val();
 		var gender =$('#gender').val();
+		var level = $('#level').val();
 		var status = 0;
 		//alert(singername + singernamekh + image + gender); 
-		Meteor.call('addSinger', singername, singernamekh, image, status, gender);
+		Meteor.call('addSinger', singername, singernamekh, image, status, gender,level);
 		Router.go('/admin/allsinger');
 		//console.log("Inserted");
 	}
@@ -22,12 +23,14 @@ Template.updatesinger.events({
 		var image =$('#image').val();
 		var gender =$('#gender').val();
 		var status = 0;
+		var level = $('#level').val();
 		//alert(singername + singernamekh + image + gender); 
 		var attributes = {
 			singername:singername,
 			singernamekh:singernamekh,
 			image:image,	
 			status:status,
+			level:level,
 			gender:gender
 		}
 		Meteor.call('updateSinger',id, attributes );
@@ -36,11 +39,14 @@ Template.updatesinger.events({
 	}
 });
 Template.updatesinger.helpers({
-	Isgender:function(gender){
-		if(gender == "Male")
-			return true;
-		else
-			return false;
+	getlevelname:function(level){
+		if(level == "1"){
+			return "Top";
+		}else if(level == "2"){
+			return "Regular";
+		}else{
+			return "Normal";
+		}
 	}
 });
 Template.allsinger.events({
