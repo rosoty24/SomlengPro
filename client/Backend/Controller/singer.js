@@ -44,8 +44,11 @@ Template.updatesinger.helpers({
 			return "Top";
 		}else if(level == "2"){
 			return "Regular";
-		}else{
+		}else if(level == "3"){
 			return "Normal";
+		}
+		else{
+			return "Select level";
 		}
 	}
 });
@@ -60,6 +63,18 @@ Template.allsinger.events({
 	}
 });
 Template.allsinger.helpers({
+	getlevelname:function(level){
+		if(level == "1"){
+			return "Top";
+		}else if(level == "2"){
+			return "Regular";
+		}else if(level == "3"){
+			return "Normal";
+		}
+		else{
+			return "Select level";
+		}
+	},
 	getSinger: function(){
 		var result = singer.find({}).map(function(document, index){
 			document.index = index+1;

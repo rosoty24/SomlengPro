@@ -137,8 +137,11 @@
                                         <td>{{singername}}</td>
                                         <td>{{singernamekh}}</td>							
 										<td>{{gender}}</td>
+										<td>{{getlevelname level}}</td>
 										<td class="text-center"><a href="/admin/listmusic/{{_id}}">{{nummusic _id}} <i class="fa fa-music"></i></a></td>
-										<td class="text-center"><a class="" href="" data-toggle="modal" data-target="#myModal" id="addmusic"><i class="fa fa-plus-circle"></i> Music</a></td>
+										<td class="text-center">
+											<a class="" href="" data-toggle="modal" data-target="#myModal" id="addmusic"><i class="fa fa-plus-circle"></i> Music</a>
+										</td>
 										<td class="text-center"><a class="glyphicon glyphicon-trash center-block" href="" id="remove"></a></td>
 										<td class="text-center"><a class="glyphicon glyphicon-edit center-block" href="updatesinger/{{_id}}"></a></td>
                                     </tr>
