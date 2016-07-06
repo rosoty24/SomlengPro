@@ -17,18 +17,6 @@ Template.listsearch.helpers({
 		var result = singer.findOne({_id:id}).image;
 		if(result)
 			return "/img/singer/"+result;
-	},
-	Timeplay:function(){
-		var audio = new Audio();
-		//audio.loop = true;
-		audio.src = "/mp3/Sunday/Vol-208/01. Kror kmean komhos - Eva.mp3";
-		audio.loop = true;
-		console.log("MY_SRC="+audio.duration);
-		var durmins = Math.floor(audio.duration / 60);
-		var dursecs = Math.floor(audio.duration - durmins * 60);
-		console.log("MYDUR="+durmins);
-		console.log("MYSEC="+dursecs);
-		return durmins+":"+dursecs;
 	}
 });
 

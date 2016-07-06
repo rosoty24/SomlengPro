@@ -2,10 +2,12 @@ Template.mainLayout.helpers({
 	Ishome:function(){
 		var url = Router.current().route.path();
 		//console.log("URL=="+url);
-		if(url == '/')
+		if(url == '/'){
 			return true;
-		else
+		}
+		else{
 			return false;
+		}
 	}
 });
 Template.mainLayout.events({
@@ -125,5 +127,12 @@ Template.mainLayout.events({
 			$("#currentplay i").removeClass("fa-pause");
 			$("#currentplay i").addClass("fa-play");
 		}		
+	},
+	"click #above":function(e){
+		e.preventDefault();
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		$("#singerval").focus();
+		$("#singerval").addClass("focus");
+		//$("#singerval").blur();
 	}
 });

@@ -23,6 +23,7 @@
 Template.playlist.rendered=function(){
 	//Session.set("searchsingersidebar", undefined);
 	$("html, body").animate({ scrollTop: 0 }, "slow");
+	$('#dataSinger').html('');
 };
 Template.playlist.helpers({
 	Myplaylist:function(){

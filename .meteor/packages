@@ -17,11 +17,8 @@ standard-minifier-js    # JS minifier run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
-matteodem:easy-search
 u2622:persistent-session
-wollardj:timeago
 alanning:roles
 msavin:mongol
 accounts-password 
@@ -30,8 +27,8 @@ fortawesome:fontawesome
 accounts-facebook
 service-configuration
 twbs:bootstrap
-meteorhacks:fast-render
 accounts-google
 
 
-npm-container
+easy:search
+wollardj:timeago

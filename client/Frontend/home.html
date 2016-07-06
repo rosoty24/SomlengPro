@@ -13,7 +13,8 @@
             <div class="col-md-6 col-md-offset-3 padding-xs">
 			<form class="search" role="search">
               <div class="input-group input-group-lg">
-				 {{> EasySearch.Input index=singerIndex attributes=inputAttributes timeout=500}}
+				 <!-- {{> EasySearch.Input index=singerIndex attributes=inputAttributes timeout=500}} -->
+				 <input type="text" id="textsearch" class="form-control" placeholder='Search singer here...'>
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button">Go!</button>
                 </span>
@@ -43,29 +44,29 @@
           </div>
         </div>
         <div class="section">
-            <div class="row">
-				{{#EasySearch.Each index=singerIndex }}
-				  	<div class="col-xs-6 col-sm-4 col-md-2 padding-xs">              
-						<div class="thumbnail">
-							<a href="/playlist/{{singername}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
-							<div class="text-center">	
-								<h5 class="text-muted">{{singernamekh}}</h5>
-								<h5><a href="/playlist/{{singername}}">{{singername}}</a></h5>						
-								<p class="caption">
-									<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
-									<a href="/playlist/{{singername}}" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countlike _id}}</a>
-								</p>						
-							</div>
-						</div>      
-				  	</div>
-				{{/EasySearch.Each}}
-				{{#EasySearch.IfNoResults index=singerIndex }}
-					<img src="/img/icons/loading.gif" class="img-responsive center-block">
-				{{/EasySearch.IfNoResults }}
+        	<div class="row" id="dataSinger"></div>
+            <div class="row" id="defaultSinger">
+            	{{#if getSinger}}
+	            	{{#each getSinger}}
+	            		<div class="col-xs-6 col-sm-4 col-md-2 padding-xs">              
+							<div class="thumbnail">
+								<a href="/playlist/{{singername}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
+								<div class="text-center">	
+									<h5 class="text-muted">{{singernamekh}}</h5>
+									<h5><a href="/playlist/{{singername}}">{{singername}}</a></h5>						
+									<p class="caption">
+										<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
+										<a href="/playlist/{{singername}}" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countlike _id}}</a>
+									</p>						
+								</div>
+							</div>      
+					  	</div>
+	            	{{/each}}
+	            {{else}}
+	            	<img src="/img/icons/loading.gif" class="img-responsive center-block">
+	            {{/if}}
             </div>
-			<!-- /row -->
         </div>
-		<!-- end section singer -->
       </div>
     </div>
 </template>
