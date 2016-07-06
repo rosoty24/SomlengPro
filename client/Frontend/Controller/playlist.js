@@ -28,37 +28,10 @@ Template.playlist.rendered=function(){
 Template.playlist.helpers({
 	Myplaylist:function(){
 		var id = Session.get("GETSINGER-ID");
-		var result = musics.find({singerid:id}).fetch();
-		//var tempArray = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+		var result = musics.find({singerid:id},{limit:25}).fetch();
 		var items = result.shuffle();
 		return items;
-		//console.log("items");
-		//console.log(items);
-		// //var n,r;
-  //   	var r, rand, n;
-  //   	//numbers = [1,2,3,5,8,13,21,34,55,89];
-		// n = result.slice(0); // clone the array
-		// r = [];
-		// while (n.length){
-		//     rand = Math.floor(Math.random()*n.length);
-		//     r.push(n.splice(rand,1));
-		//     //console.log(r[r.length-1]);
-		// }
-		// console.log("r==");
-		// console.log(r);
-		// return r;
 	},
-	// ,
-	// getsidebarsinger: function(){
-	// 	var result = singer.find();
-	// 	return result;
-	// },
-	// getproname:function(id){
-	// 	return production.findOne({_id:id}).title;
-	// },
-	// getalbumname:function(id){
-	// 	return production.findOne({_id:id}).title;
-	// },
 	parthImage:function(id){
 		var result = singer.findOne({_id:id}).image;
 		if(result)
