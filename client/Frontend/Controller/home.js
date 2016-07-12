@@ -6,11 +6,11 @@ Template.index.helpers({
 		var type = Session.get('SINGER-GENDER');
 		var result = '';
 		if(type === 'men'){
-			result = singer.find({'gender':'Male'},{limit:30,sort:{level:1}});
+			result = singer.find({'gender':'Male'},{sort:{level:1}});
 		}else if (type === 'women'){
-			result = singer.find({'gender':'Female'},{limit:30,sort:{level:1}});
+			result = singer.find({'gender':'Female'},{sort:{level:1}});
 		}else{
-			result = singer.find({},{limit:30,sort:{level:1}});
+			result = singer.find({},{sort:{level:1}});
 		}
 		return result;
 	},
@@ -37,6 +37,10 @@ Template.index.helpers({
 	},
 	Countlike:function(id){
 		return like.find({'singerId':id}).count();
+	},
+	Countview:function(id){
+		console.log("sINGERID=="+id);
+		return view.find({'singerid':id}).count();
 	}
 });
 Template.index.events({

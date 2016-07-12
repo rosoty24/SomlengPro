@@ -1,18 +1,52 @@
-// Template.rightside.redered = function(){
-// 	$.getScript("//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",function(){
-// 		var ads,adsbygoogle;
-// 		ads = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-3963205054734109" data-ad-slot="4331288073"></ins>';
-// 		$('#ads-right').html(ads);
-// 		return (adsbygoogle = window.adsbygoogle || []).push({});
-// 	});
-// }
-				// <!-- somleng -->
-				// <ins class="adsbygoogle"
-				//      style="display:inline-block;width:300px;height:600px"
-				//      data-ad-client="ca-pub-3963205054734109"
-				//      data-ad-slot="4331288073"></ins>
-				// <script>
-				// (adsbygoogle = window.adsbygoogle || []).push({});
-				// </script>
-				// <!-- <img src="/ads/sz168-1.gif" width="100%"/> -->
+Template.playmp3.rendered=function(){
+	var description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor nisi. Aenean sodales diam ac lacus elementum scelerisque. Suspendisse a dui vitae lacus faucibus venenatis vel id nisl. Proin orci ante, ultricies nec interdum at, iaculis venenatis nulla. ';
+
+            $('#play').ttwMusicPlayer(Getmyplay, {
+                autoPlay:true, 
+                description:description,
+                jPlayer:{
+                    swfPath:'/plugin/jquery-jplayer' //You need to override the default swf path any time the directory structure changes
+                }
+            });
+}
+Template.registerHelper('Getmyplay', function() {
+    //return "http://51.254.205.178:8080"+src;;
+    var myPlaylist = [
+
+	    {
+	        mp3:'/mix/1.mp3',
+	        oga:'/mix/1.ogg',
+	        title:'Sample',
+	        artist:'Sample',
+	        rating:4,
+	        buy:'#',
+	        price:'0.99',
+	        duration:'0:30',
+	        cover:'/mix/1.png'
+	    },
+	    {
+	        mp3:'/mix/1.mp3',
+	        oga:'/mix/1.ogg',
+	        title:'Somleng',
+	        artist:'Sample',
+	        rating:4,
+	        buy:'#',
+	        price:'0.99',
+	        duration:'0:30',
+	        cover:'/mix/1.png'
+	    },
+	    {
+	        mp3:'/mix/1.mp3',
+	        oga:'/mix/1.ogg',
+	        title:'Music',
+	        artist:'Sample',
+	        rating:4,
+	        buy:'#',
+	        price:'0.99',
+	        duration:'0:30',
+	        cover:'/mix/1.png'
+	    }
+	];
+	return myPlaylist;
+});
 

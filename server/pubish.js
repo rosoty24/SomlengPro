@@ -34,6 +34,9 @@ Meteor.publish("review", function(){
 Meteor.publish("CountMusic", function(){
     return musics.find({});
 });
+Meteor.publish("view", function(){
+    return view.find({});
+});
 
 
 
